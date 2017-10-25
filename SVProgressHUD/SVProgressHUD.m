@@ -1473,7 +1473,9 @@ static const CGFloat SVProgressHUDLabelSpacing = 8.0f;
     UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:blurEffectStyle];
     
     self.hudView.effect = blurEffect;
-    self.hudVibrancyView.effect = [UIVibrancyEffect effectForBlurEffect:blurEffect];
+    
+    // fixed: ios8 多次显示字体透明问题
+    //self.hudVibrancyView.effect = [UIVibrancyEffect effectForBlurEffect:blurEffect];
 }
 
 #if TARGET_OS_IOS && __IPHONE_OS_VERSION_MAX_ALLOWED >= 100000
